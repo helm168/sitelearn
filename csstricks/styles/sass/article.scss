@@ -1,0 +1,32 @@
+article {
+  color: black;
+  h1 {
+    margin: 0 0 20px 0;
+  }
+  li {
+    margin: 0 0 5px 0;
+  }
+  a {
+    border-bottom: 2px solid transparent;
+    &:hover {
+      color: #333;
+      border-bottom-color: #999;
+    }
+  }
+}
+
+.a-author {
+  font-size: .9rem;
+}
+
+.a-time {
+  font-size: .9rem;
+  color: #999;
+}
+
+.a-content {
+  background-color: white;
+  position: relative;
+  padding: 50px 40px;
+}
+
