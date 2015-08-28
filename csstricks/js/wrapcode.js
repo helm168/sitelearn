@@ -4,6 +4,10 @@
   ln = eles.length;
   for(idx = 0; idx < ln; idx++) {
     ele = eles[idx];
-    CodeMirror.fromTextArea(ele, {});
+    CodeMirror.fromTextArea(ele, {
+      htmlMode: true,
+      mode: 'text/html',
+      theme: 'xq-dark'
+    });
   }
 })();
