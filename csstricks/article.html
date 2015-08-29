@@ -3,8 +3,7 @@
   <head>
     <link rel="stylesheet" href="dist/css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700">
-    <link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css">
-    <link rel="stylesheet" href="node_modules/codemirror/theme/xq-dark.css">
+    <link rel="stylesheet" href="dist/css/prism.css">
   <head>
   <body>
     <header>
@@ -54,8 +53,8 @@
             <h3>CSS Bar Charts</h3>
             <p>There are a couple of ways to make a simple bar chart in CSS. For starters we'll use a definition list for our data:</p>
             <pre rel="HTML">
-              <textarea class="js-to-wrap">
- <dl>
+              <code class="language-markup">
+<dl>
   <dt>title of the graph</dt>
   <dd class="percentage">
     <span class="text">
@@ -72,10 +71,27 @@
       Data 3: 30%
     </span>
   </dd>
-</dl></textarea></pre>
+</dl></code></pre>
             <p>We'll absolutely position the text content of each dd to the left with that span.</p>
             <p>To make the "bars" that visually represent the data, we'll use pseudo elements. To do that we could update the markup with classes like .percentage-20, and set a width on its pseudo element:</p>
-          
+            <pre rel="SCSS">
+              <code class="language-css">
+.percentage:after {
+  content: "";
+  display: block;
+  background-color: #3d9970;
+}
+.percentage-20:after {
+  width: 20%;
+}
+.percentage-30:after {
+  width: 30%;
+}
+              </code>
+            </pre>
+            <p>
+                But we don't want to have to write out every single one of these classes by hand because the data is likely to change in the future. We could write a Sass loop to make all those classes for us:
+            </p>
           </div>
         </article>
       </section>
@@ -87,8 +103,18 @@
 
 
     <footer></footer>
-    <script type="text/javascript" src="node_modules/codemirror/lib/codemirror.js"></script>
-    <script type="text/javascript" src="node_modules/codemirror/mode/xml/xml.js"></script>
-    <script type="text/javascript" src="js/wrapcode.js"></script>
+    <script>
+      var markupCodes = document.querySelectorAll('code.language-markup');
+      console.log('markup', markupCodes);
+      var idx, ln, markupCode;
+      ln = markupCodes.length;
+      for(idx = 0; idx < ln; idx++) {
+        markupCode = markupCodes[idx];
+        markupCode.innerText;
+        markupCode.innerText = markupCode.innerHTML;
+      }
+
+    </script>
+    <script type="text/javascript" src="js/prism.js"></script>
   </body>
 </html>

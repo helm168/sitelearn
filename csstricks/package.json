@@ -4,7 +4,6 @@
   "description": "css trick site learn",
   "main": "index.js",
   "dependencies": {
-    "codemirror": "^5.5.0"
   },
   "devDependencies": {},
   "scripts": {
