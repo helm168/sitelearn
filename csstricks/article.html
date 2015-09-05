@@ -26,7 +26,7 @@
 
 
     <main>
-      <section>
+      <section class="blog-posts">
         <article>
           <header>
             <h1>Making Charts with CSS</h1>
@@ -37,6 +37,31 @@
           <div class="a-content">
 
           </div>
+          <section class="comments">
+            <h1 class="comment-title">Comments</h1>
+            <ol class="commentgroup">
+              <li class="comment">
+                <div class="comment-avatar">
+                  <img src="https://secure.gravatar.com/avatar/e6bad19b6c2b1b5d7c85fedb6c949b05?s=160&d=https%3A%2F%2Fcss-tricks.com%2Fimages%2Fget-gravatar.png&r=pg" width="160" height="160">
+                </div>
+                <div class="comment-body">
+                  <div class="comment-author-wrap">
+                    <div class="comment-author">
+                      RioBrewster
+                    </div>
+                    <div class="comment-time">
+                      <time>August 18, 2015</time>  
+                    </div>
+                  </div>
+                  <div class="comment-content">
+                    <p>
+                      I used to make horizontal bar charts using tables and css.o                   </p>
+                    <p>You put the labels in the left column, then in the second column you use a div and figure out the relative percentage of the width of that column for each value. Then float the actual value to the right of the div.</p>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </section>
         </article>
       </section>
       <aside></aside>
@@ -51,15 +76,6 @@
     <script type="text/javascript" src="js/marked.js"></script>
     <script type="text/javascript" src="js/prism.js"></script>
     <script>
-      /*var markupCodes = document.querySelectorAll('code.language-markup');
-      console.log('markup', markupCodes);
-      var idx, ln, markupCode;
-      ln = markupCodes.length;
-      for(idx = 0; idx < ln; idx++) {
-        markupCode = markupCodes[idx];
-        markupCode.innerText;
-        markupCode.innerText = markupCode.innerHTML;
-      }*/
       var content = document.querySelector('.a-content');
       var xhr = new XMLHttpRequest();
       xhr.open('get', 'docs/Making-Charts-with-CSS.md');

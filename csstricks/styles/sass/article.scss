@@ -30,3 +30,40 @@ article {
   padding: 50px 40px;
 }
 
+.commentgroup {
+  .comment {
+    background: white;  
+    padding: 40px 0 40px 40px;
+    &::after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+  }
+
+  .comment-body {
+    float: left;
+    width: 80%;
+  }
+
+  .comment-title {
+    padding-top: 2rem;
+  }
+
+  .comment-avatar {
+    float: left;
+    width: 20%;
+    padding-right: 40px;
+    margin: 0 0 40px 0;
+  }
+
+  .comment-content {
+    padding-right: 40px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
